@@ -1,0 +1,40 @@
+/* table of contents
+  1. global styles
+  2. layout
+   2.1 main layout settings
+   2.2 main image
+   2.3 content
+   2.4 button
+   2.5 links
+  3. learning notes
+    3.1 :hover pseudo-class
+    3.2 width X max-width
+    3.3 font-weight
+*/
+
+/* =============
+   global styles
+   ============= */
+
+   html {
+    box-sizing: border-box;
+  }
+  
+  *, ::after, ::before {
+    box-sizing: inherit;
+  }
+  
+  body {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: hsl(233, 47%, 7%);
+    font-family: "Inter", sans-serif;
+    color: hsla(0, 0%, 100%, 0.75);
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 15px;
+  }
+  
