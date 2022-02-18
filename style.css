@@ -1,40 +1,190 @@
 /* table of contents
   1. global styles
-  2. layout
-   2.1 main layout settings
-   2.2 main image
-   2.3 content
-   2.4 button
-   2.5 links
-  3. learning notes
-    3.1 :hover pseudo-class
-    3.2 width X max-width
-    3.3 font-weight
+  2. typography
+  3. main image
+  4. layout
+  5. desktop media query
+     5.1 global styles
+     5.2 typography
+     5.3 main image
+     5.4 layout
 */
 
 /* =============
    global styles
    ============= */
 
-   html {
-    box-sizing: border-box;
+html {
+  box-sizing: border-box;
+}
+
+*, ::after, ::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: hsl(233, 47%, 7%);
+  font-family: "Inter", sans-serif;
+  color: hsla(0, 0%, 100%, 0.75);
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 0.938rem;
+}
+
+/* =============
+     typography
+   ============= */
+
+h1 {
+  color: hsl(0, 0%, 100%);
+  font-size: 1.7rem;
+  margin: 0 0 1.5rem 0;
+}
+
+h1 span {
+  color: hsl(277deg 75% 65%);
+}
+
+h2 {
+  color: hsl(0, 0%, 100%);
+  margin: 1.5rem 0 0 0;
+}
+
+p {
+  color: hsla(0, 0%, 100%, 0.75);
+  text-align: center;
+}
+
+.statistics p {
+  color: hsla(0, 0%, 100%, 0.6);
+  text-transform: uppercase;
+  margin: 0;
+  font-family: "Lexend Deca";
+  font-size: 0.7rem;
+}
+
+/* =============
+   main image
+   ============= */
+
+.imgWrapper {
+  border-radius: 0.8rem 0.8rem 0 0;
+  background: url("images/image-header-mobile.jpg") rgba(88, 30, 122, 0.91);
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: overlay;
+  width: 100%;
+  min-height: 250px;
+  position: relative;
+  text-decoration: none;
+}
+
+/* =============
+      layout
+   ============= */
+
+.isResponsive {
+  display: flex;
+  flex-shrink: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  max-width: 24rem;
+  border-radius: 0.8rem;
+  padding: 1rem;
+}
+
+.cardContent {
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0.8rem;
+}
+
+.mainContent {
+  flex-direction: column;
+  background-color: hsl(244, 38%, 16%);
+  border-radius: 0.8rem;
+}
+
+.mainText {
+  flex-direction: column;
+  text-align: center;
+  padding: 3rem 2.5rem 3rem 2.5rem;
+}
+
+.statistics {
+  flex-direction: column;
+}
+
+/* =============
+   desktop
+   ============= */
+
+@media only screen and (min-width: 1000px) {
+
+  /* =============
+     typography
+   ============= */
+
+  h1 {
+    font-size: 2rem;
+    margin: 1.5rem 0 1.5rem 0;
   }
-  
-  *, ::after, ::before {
-    box-sizing: inherit;
+
+  p {
+    text-align: left;
+    font-size: 0.9rem;
   }
-  
-  body {
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: hsl(233, 47%, 7%);
-    font-family: "Inter", sans-serif;
-    color: hsla(0, 0%, 100%, 0.75);
-    font-weight: 400;
-    line-height: 1.5;
-    font-size: 15px;
+
+  /* =============
+     main image
+     ============= */
+
+  .imgWrapper {
+    border-radius: 0 0.8rem 0.8rem 0;
+    max-width: 50%;
+    background: url("images/image-header-desktop.jpg") rgba(88, 30, 122, 0.91);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
-  
+
+  /* =============
+      layout
+     ============= */
+
+  .card {
+    max-width: 950px;
+    padding: 1rem;
+  }
+
+  .cardContent,
+  .mainContent {
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 100%;
+  }
+
+  .mainText {
+    text-align: left;
+    flex-grow: 1;
+    max-width: 50%;
+    padding: 2.5rem 2.5rem 3rem 3rem;
+  }
+
+  .statistics {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .statisticsDiv {
+    padding-right: 4rem;
+  }
+}
