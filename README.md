@@ -26,7 +26,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Code on GitHub](https://github.com/Ivuska/frontendmentor-stats-preview-card-component)
-- Live Site URL: [Solution LIVE](https://ivuska.github.io/frontendmentor-stats-preview-card-component/)
+- Live Site URL: [Solution LIVE](https://ifischerova.github.io/frontendmentor-stats-preview-card-component/)
 
 ## My process
 
